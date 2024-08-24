@@ -3,13 +3,12 @@ name: Automatic Rebase
 on: [pull_request_target]
 
 jobs:
-  _:
+  automatic-rebase:
     name: "Automatic Rebase"
-
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
-    - uses: ljharb/rebase@master
+    - uses: ljharb/rebase@v1 # Updated version
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
